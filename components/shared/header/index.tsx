@@ -18,7 +18,7 @@ export default function header() {
                             className="flex items-center header-button font-extrabold text-2xl m-1"
                             >
                              <Image 
-                                src="/icons/logo.png"
+                                src="/icons/logo.svg"
                                 width={40}
                                 height={40}
                                 alt={`${APP_NAME} Logo`}
@@ -43,7 +43,7 @@ export default function header() {
                     All
                     </Button>
                     <div className="flex items-center flex-wrap gap-3 overflow-hidden max-h-[42px]">
-                        {data.headerMenu.map((menu) => (
+                        {data.headerMenus.map((menu) => (
                             <Link 
                             href={menu.href}
                             key={menu.name}
