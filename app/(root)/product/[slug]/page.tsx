@@ -9,6 +9,8 @@ import ProductGallery from '@/components/shared/product/product-gallery'
 import { Separator } from '@/components/ui/separator'
 import ProductSlider from '@/components/shared/product/product-slider'
 import Rating from '@/components/shared/product/rating'
+import BrowsingHistoryList from '@/components/shared/browsing-history-list'
+import AddToBrowsingHistory from '@/components/shared/product/add-to-browsing-history'
 
 export async function generateMetadata(props: {
     params: Promise<{ slug: string }>
@@ -41,6 +43,7 @@ export default async function ProductDetails(props: {
 
     return (
         <div>
+            <AddToBrowsingHistory id={product._id} category={product.category} />
             <section>
                 <div className='grid grid-cols-1 md:grid-cols-5'>
                     <div className='md:col-span-2'>
@@ -110,6 +113,9 @@ export default async function ProductDetails(props: {
                     products={relatedProducts.data}
                     title={`Best Sellers in ${product.category}`}
                 />
+            </section>
+            <section>
+                <BrowsingHistoryList className='my-10' />
             </section>
         </div>
     )
